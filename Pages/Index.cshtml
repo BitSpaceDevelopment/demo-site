@@ -1,0 +1,45 @@
+﻿@page
+@model IndexModel
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Bit Space Demo Site";
+}
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+    <h1 class="display-4">Welcome to the Bit Space Demo Site</h1>
+    <p>You are sucessfully logged in as: @User.Identity.Name!</p>
+
+    <p>Available 360 demos:</p>
+    <ul>
+        <li><a href="http://demo.bitspacedevelopment.com/vera/">Vera</a></li>
+        <li><a href="http://demo.bitspacedevelopment.com/winnipegvr/">Winnipeg VR</a></li>
+    </ul>
+    <p>Please note that some 360 demos are available as Google VR demos through Google Cardboard and Web VR.</p>
+   
+
+    <p>Available 360 Video demos:</p>
+    <ul>
+        <li><a href="http://demo.bitspacedevelopment.com/trythetrades/">Try The Trades</a></li>
+    </ul>
+
+    <p>Available Game demos:</p>
+    <ul>
+        <li><a href="http://demo.bitspacedevelopment.com/scaffolding/">Scaffolding</a></li>
+        <li><a href="http://demo.bitspacedevelopment.com/levelup/">Level Up</a></li>
+    </ul>
+
+
+
+    </div>
+
+}
+else
+{
+    <div class="text-center">
+    <h1 class="display-4">Welcome to the Bit Space Demo Site</h1>
+    <p>Please log into your account to access our demo links.</p>
+    </div>
+}
